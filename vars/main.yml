@@ -1,2 +1,2 @@
 ---
-# vars file for test-role
+- gotop_filename: 'gotop_v4.1.4_linux_amd64.tgz'

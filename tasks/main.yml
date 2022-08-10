@@ -1,2 +1,17 @@
 ---
-# tasks file for test-role
+- name: Downloading gotop .tgz file
+  get_url:
+    url : "https://github.com/xxxserxxx/gotop/releases/download/v4.1.4/{{ gotop_filename }}"
+    dest: /tmp
+    mode: 0644
+
+- name: Extract gotop .tgz package at /usr/local/bin
+  unarchive:
+    src: "/tmp/{{ gotop_filename }}"
+    dest: /usr/local/bin
+    mode: 0755
+
+- name: Delete gotop .tgz package at /tmp
+  file:
+    path: "/tmp/{{ gotop_filename }}"
+    state: absent
