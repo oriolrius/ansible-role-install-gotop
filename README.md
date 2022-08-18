@@ -1,5 +1,5 @@
-Role Name
-=========
+Install gotop
+=============
 
 Install gotop, just downloading the binary and moving it to /usr/local/bin
 
