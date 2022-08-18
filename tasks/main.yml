@@ -1,7 +1,7 @@
 ---
 - name: Downloading gotop .tgz file
   get_url:
-    url : "{{ gotop_repository }}{{ gotop_filename }}"
+    url: "{{ gotop_repository }}{{ gotop_filename }}"
     dest: /tmp
     mode: 0644
 
