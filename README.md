@@ -1,31 +1,59 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Install gotop, just downloading the binary and moving it to /usr/local/bin
+
+If you don't know gotop, there is more information at https://github.com/xxxserxxx/gotop
+Short definition, it's a top like command in asteroids.
+
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- Internet for downloading the binary
+- SSH access to the target host
+- x86_64 architecture
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+There are only two variables, the binary filename and the repository URL where it can be downloaded.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+For instance, run_install_gotop.yml:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
+- become: yes
+  user: root
+  hosts: all
+  name: Installing gotop
+  roles:
+    - { role: gotop }
+```
+
+Custom ansible.cfg for not installing the role. Just locate this file in the same place that you habe the 'run_install_gotop.yml' file.
+
+ansible.cfg contents:
+
+```
+[defaults]
+role_path = ./roles:/etc/ansible/roles
+```
+
+And it can be run with:
+
+```
+# replace localhost host with the IP address of your target host.
+# IMPORTANT! keep the comma at the end of the string, or IP address that you use.
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i 'localhost,' run_install_gotop.yml
+```
 
 License
 -------
@@ -35,4 +63,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Oriol Rius <oriol@joor.net>
