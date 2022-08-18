@@ -1,7 +1,7 @@
 galaxy_info:
   author: Oriol Rius
   role_name: install-gotop
-  description: Linux top command on asteroids
+  description: 'Linux top command on asteroids'
   issue_tracker_url: https://github.com/oriolrius/ansible-role-install-gotop/issues
   license: MIT
   min_ansible_version: 2.9
