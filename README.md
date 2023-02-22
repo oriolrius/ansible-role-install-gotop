@@ -24,10 +24,18 @@ Dependencies
 
 None
 
+Install the playbook
+--------------------
+
+```
+ansible-galaxy install oriolrius.install_gotop
+```
+
+
 Example Playbook
 ----------------
 
-For instance, run_install_gotop.yml:
+For instance, **install_gotop.yml**:
 
 ```
 - become: yes
@@ -38,21 +46,14 @@ For instance, run_install_gotop.yml:
     - { role: gotop }
 ```
 
-Custom ansible.cfg for not installing the role. Just locate this file in the same place that you habe the 'run_install_gotop.yml' file.
-
-ansible.cfg contents:
-
-```
-[defaults]
-role_path = ./roles:/etc/ansible/roles
-```
-
 And it can be run with:
 
 ```
 # replace localhost host with the IP address of your target host.
 # IMPORTANT! keep the comma at the end of the string, or IP address that you use.
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i 'localhost,' run_install_gotop.yml
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i 'YOUR_HOST,' run_install_gotop.yml
+
+# !!!! change YOUR_HOST for your IP address, or domain name.
 ```
 
 License
