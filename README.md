@@ -43,7 +43,7 @@ For instance, **gotop.yml**:
   hosts: all
   name: Installing gotop
   roles:
-    - { role: gotop }
+    - { role: oriolrius.install_gotop }
 ```
 
 And it can be run with:
