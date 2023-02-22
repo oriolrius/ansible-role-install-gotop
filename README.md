@@ -35,7 +35,7 @@ ansible-galaxy install oriolrius.install_gotop
 Example Playbook
 ----------------
 
-For instance, **install_gotop.yml**:
+For instance, **gotop.yml**:
 
 ```
 - become: yes
@@ -51,7 +51,7 @@ And it can be run with:
 ```
 # replace localhost host with the IP address of your target host.
 # IMPORTANT! keep the comma at the end of the string, or IP address that you use.
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i 'YOUR_HOST,' run_install_gotop.yml
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i 'YOUR_HOST,' gotop.yml
 
 # !!!! change YOUR_HOST for your IP address, or domain name.
 ```
